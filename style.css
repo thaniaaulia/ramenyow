@@ -1,0 +1,32 @@
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:#fff3df;color:#38251c}
+header{background:#a92820;color:#fff;padding:22px 6%;display:flex;justify-content:space-between;align-items:center;gap:20px;box-shadow:0 5px 16px #0002}
+h1{margin:0;font-size:clamp(25px,4vw,40px)}
+header p{margin:5px 0 0;opacity:.9}
+.money{font-size:26px;font-weight:800;background:#0002;padding:12px 18px;border-radius:16px;white-space:nowrap}
+main{max-width:1200px;margin:auto;padding:22px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:18px}
+.stats div,.panel{background:#fff;border:2px solid #efd7bd;border-radius:18px;box-shadow:0 5px 18px #5b2b1212}
+.stats div{padding:15px;text-align:center;font-size:17px}
+.stats b{display:block;font-size:24px;color:#a92820}
+.game{display:grid;grid-template-columns:1fr 1.35fr .9fr;gap:18px}
+.panel{padding:18px}
+h2{margin:0 0 15px;font-size:20px}
+.customer{padding:13px;margin:10px 0;border:2px solid #f1dfcf;border-radius:14px;cursor:pointer}
+.customer:hover,.customer.active{border-color:#a92820;background:#fff5f2}
+.customer strong{display:block}
+.customer small{color:#77675d}
+.ramen-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.ramen-grid button,.panel>button{border:0;border-radius:14px;padding:14px;background:#ffe1c2;color:#38251c;font-weight:750;font-size:16px;cursor:pointer;margin-bottom:10px}
+.ramen-grid button:hover,.panel>button:hover{transform:translateY(-2px);background:#ffd0a3}
+.orderbox{margin-top:8px;padding:18px;background:#fff7ee;border-radius:15px;text-align:center;line-height:1.5}
+.serve{background:#3a8d66!important;color:#fff!important;padding:13px 22px!important;margin-top:12px;width:100%}
+.serve:disabled{opacity:.4;cursor:not-allowed}
+.panel>button{width:100%;text-align:left}
+.hint{font-size:13px;color:#78685f;line-height:1.4}
+.day{background:#4e6fc3!important;color:#fff!important;text-align:center!important}
+.reset{background:#eee!important;color:#8b2c25!important;text-align:center!important}
+.log{margin-top:18px}
+.log div{padding:7px 0;border-bottom:1px dashed #ead4c0}
+.log div:last-child{border:0}
+@media(max-width:850px){.game{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr 1fr}header{flex-direction:column;align-items:flex-start}}

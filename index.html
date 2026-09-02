@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>🍜 Ramen Shop Simulator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div>
+    <h1>🍜 Ramen Shop Simulator</h1>
+    <p>Bangun kedai ramen kecilmu sampai jadi legenda!</p>
+  </div>
+  <div class="money">💴 ¥<span id="money">0</span></div>
+</header>
+
+<main>
+  <section class="stats">
+    <div>⭐ Reputasi <b id="rep">1.0</b></div>
+    <div>📅 Hari <b id="day">1</b></div>
+    <div>🍜 Terlayani <b id="served">0</b></div>
+  </section>
+
+  <section class="game">
+    <div class="panel">
+      <h2>👥 Pelanggan</h2>
+      <div id="customerList"></div>
+    </div>
+
+    <div class="panel kitchen">
+      <h2>🍜 Dapur</h2>
+      <div class="ramen-grid">
+        <button data-ramen="shoyu">🍜 Shoyu<br><small>¥150</small></button>
+        <button data-ramen="miso">🥢 Miso<br><small>¥180</small></button>
+        <button data-ramen="tonkotsu">🐷 Tonkotsu<br><small>¥220</small></button>
+        <button data-ramen="spicy">🌶️ Spicy Ramen<br><small>¥250</small></button>
+      </div>
+      <div class="orderbox">
+        <div id="orderText">Pilih pelanggan untuk melihat pesanannya.</div>
+        <button id="serveBtn" class="serve" disabled>🍜 Sajikan</button>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>🔧 Upgrade Kedai</h2>
+      <button id="kitchenBtn">🔥 Kompor lebih cepat</button>
+      <button id="seatBtn">🪑 Tambah kursi</button>
+      <button id="qualityBtn">🥚 Bahan premium</button>
+      <p class="hint">Setiap upgrade bisa dibeli maksimal 2 level.</p>
+      <button id="dayBtn" class="day">🌙 Tutup kedai</button>
+      <button id="resetBtn" class="reset">Reset progress</button>
+    </div>
+  </section>
+
+  <section class="panel log">
+    <h2>📜 Catatan Kedai</h2>
+    <div id="log"></div>
+  </section>
+</main>
+<script src="game.js"></script>
+</body>
+</html>
