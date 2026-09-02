@@ -1,22 +1,35 @@
-🍜 RAMEN SHOP SIMULATOR
+🍜 RAMEN SHOP SIMULATOR 2.0
 
-Versi playable berbasis HTML/CSS/JavaScript.
-
-CARA MENJALANKAN:
-1. Extract file ZIP.
-2. Buka index.html dengan Chrome, Edge, Firefox, atau browser lain.
-3. Langsung main — tidak perlu install apa pun.
+Versi playable yang lebih lengkap, dibuat untuk browser dan GitHub Pages.
 
 FITUR:
-- Pelanggan dengan pesanan ramen acak
-- 4 jenis ramen: Shoyu, Miso, Tonkotsu, Spicy
-- Sistem uang dan reputasi
-- Upgrade kompor
-- Upgrade jumlah kursi
-- Upgrade bahan premium
-- Pergantian hari dan pendapatan harian
+- Kedai ramen dengan visual interior sederhana
+- Pelanggan dengan pesanan berbeda
+- Sistem kesabaran pelanggan
+- Meracik mie, kuah, dan topping
+- Mini-game timing memasak
+- Perfect order dan combo
+- Rating kedai
+- Uang dan pendapatan harian
+- 4 upgrade: kompor, kursi, bahan, dekorasi
+- Level kedai
+- Rush hour
+- Achievement
 - Auto-save menggunakan localStorage
-- Reset progress
+- Responsive desktop/mobile
 
-CATATAN:
-Game ini berjalan sepenuhnya di browser dan cocok di-host di GitHub Pages.
+CARA MAIN:
+1. Extract ZIP.
+2. Buka index.html.
+3. Pilih pelanggan.
+4. Ikuti pesanan.
+5. Pilih mie, kuah, topping.
+6. Klik Masak lalu STOP di zona hijau.
+7. Sajikan dan kumpulkan uang.
+8. Upgrade kedai dan lanjutkan hari.
+
+GITHUB PAGES:
+Upload index.html, style.css, dan game.js ke repository GitHub.
+Masuk ke Settings > Pages > Deploy from branch.
+Pilih branch utama dan folder /root.
+Website akan berjalan sebagai static web app.

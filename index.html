@@ -3,59 +3,87 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>🍜 Ramen Shop Simulator</title>
+<title>Ramen Shop Simulator 2.0</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
+<header class="topbar">
   <div>
-    <h1>🍜 Ramen Shop Simulator</h1>
-    <p>Bangun kedai ramen kecilmu sampai jadi legenda!</p>
+    <div class="brand">🍜 Ramen Shop Simulator <span>2.0</span></div>
+    <div class="subtitle">Kelola kedai kecilmu. Racik ramen. Kejar rating 5 ⭐.</div>
   </div>
-  <div class="money">💴 ¥<span id="money">0</span></div>
+  <div class="money">¥ <b id="money">0</b></div>
 </header>
 
 <main>
   <section class="stats">
-    <div>⭐ Reputasi <b id="rep">1.0</b></div>
     <div>📅 Hari <b id="day">1</b></div>
+    <div>⭐ Rating <b id="rating">1.00</b></div>
     <div>🍜 Terlayani <b id="served">0</b></div>
+    <div>🔥 Combo <b id="combo">0</b></div>
+    <div>📈 Level <b id="level">1</b></div>
   </section>
 
-  <section class="game">
-    <div class="panel">
+  <section class="shop">
+    <div class="scene panel">
+      <div class="window"><span>🌙</span><span>🏮</span><span>🏮</span></div>
+      <div class="sign">RAMEN<br><small>らーめん</small></div>
+      <div id="seats" class="seats"></div>
+      <div id="steam" class="steam">♨️　♨️　♨️</div>
+      <div class="counter">
+        <div class="pot">🍲</div>
+        <div class="counterText">KEDAI RAMEN</div>
+      </div>
+      <div id="rush" class="rush hidden">🔥 RUSH HOUR!</div>
+    </div>
+
+    <div class="panel customersPanel">
       <h2>👥 Pelanggan</h2>
-      <div id="customerList"></div>
+      <div id="customers"></div>
+      <div class="patience"><span id="patienceLabel">Pilih pelanggan</span><div><i id="patienceBar"></i></div></div>
     </div>
 
     <div class="panel kitchen">
-      <h2>🍜 Dapur</h2>
-      <div class="ramen-grid">
-        <button data-ramen="shoyu">🍜 Shoyu<br><small>¥150</small></button>
-        <button data-ramen="miso">🥢 Miso<br><small>¥180</small></button>
-        <button data-ramen="tonkotsu">🐷 Tonkotsu<br><small>¥220</small></button>
-        <button data-ramen="spicy">🌶️ Spicy Ramen<br><small>¥250</small></button>
+      <h2>👨‍🍳 Dapur</h2>
+      <div id="order" class="order empty">Pilih pelanggan untuk menerima pesanan.</div>
+
+      <div id="steps" class="steps">
+        <button data-step="noodle">🍜 <b>Mie</b><small>Pilih mie</small></button>
+        <button data-step="broth">🥣 <b>Kuah</b><small>Pilih kuah</small></button>
+        <button data-step="topping">🥚 <b>Topping</b><small>Pilih topping</small></button>
+        <button data-step="cook">🔥 <b>Masak</b><small>Timing!</small></button>
       </div>
-      <div class="orderbox">
-        <div id="orderText">Pilih pelanggan untuk melihat pesanannya.</div>
-        <button id="serveBtn" class="serve" disabled>🍜 Sajikan</button>
+
+      <div id="choiceBox" class="choiceBox hidden"></div>
+      <div id="cookBox" class="cookBox hidden">
+        <div class="heat"><span id="heatNeedle"></span></div>
+        <p>Tekan <b>STOP</b> saat indikator berada di zona hijau.</p>
+        <button id="stopCook" class="primary">STOP! 🔥</button>
       </div>
+
+      <button id="serve" class="serve" disabled>🍜 Sajikan Ramen</button>
+      <div id="result" class="result"></div>
     </div>
 
-    <div class="panel">
-      <h2>🔧 Upgrade Kedai</h2>
-      <button id="kitchenBtn">🔥 Kompor lebih cepat</button>
-      <button id="seatBtn">🪑 Tambah kursi</button>
-      <button id="qualityBtn">🥚 Bahan premium</button>
-      <p class="hint">Setiap upgrade bisa dibeli maksimal 2 level.</p>
-      <button id="dayBtn" class="day">🌙 Tutup kedai</button>
-      <button id="resetBtn" class="reset">Reset progress</button>
+    <div class="panel upgrades">
+      <h2>🔧 Upgrade</h2>
+      <button id="upKitchen">🔥 Kompor <small>level 0</small></button>
+      <button id="upSeats">🪑 Kursi <small>level 0</small></button>
+      <button id="upQuality">🥚 Bahan <small>level 0</small></button>
+      <button id="upDecor">🏮 Dekorasi <small>level 0</small></button>
+      <hr>
+      <button id="endDay" class="night">🌙 Tutup Kedai</button>
+      <button id="reset" class="reset">Reset progress</button>
     </div>
   </section>
 
-  <section class="panel log">
-    <h2>📜 Catatan Kedai</h2>
-    <div id="log"></div>
+  <section class="bottom">
+    <div class="panel log">
+      <h2>📜 Catatan</h2><div id="logs"></div>
+    </div>
+    <div class="panel achievements">
+      <h2>🏆 Achievement</h2><div id="achievements"></div>
+    </div>
   </section>
 </main>
 <script src="game.js"></script>
